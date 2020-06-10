@@ -14,9 +14,17 @@
 				title: 'Hello'
 			}
 		},
+
+		onLoad () {
+			this.aa()
+		},
 	
 		methods: {
-
+			aa () {
+				console.log('aaa')
+				console.log('cccc')
+				console.log('cccc')
+			}
 		}
 	}
 </script>

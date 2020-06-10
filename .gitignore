@@ -41,3 +41,4 @@ miniprogram_npm/
 
 package-lock.json
 node_modules
+dist
