@@ -14,9 +14,7 @@
 				title: 'Hello'
 			}
 		},
-		onLoad() {
-
-		},
+	
 		methods: {
 
 		}
