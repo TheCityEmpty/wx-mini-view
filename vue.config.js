@@ -2,6 +2,10 @@ const webpack = require('webpack')
 const path = require('path')
 const copyWebpackPlugin = require('copy-webpack-plugin')
 
+const resolve = dir => {
+  return path.join(__dirname, dir)
+}
+
 module.exports = {
   configureWebpack: {
     plugins: [
@@ -29,5 +33,8 @@ module.exports = {
     
     // 删除CSS 压缩插件 （Uni-app 在生成打包时会启用此插件，导致css 样式和开发环境不一致，建议删除）
     config.plugins.delete('optimize-css')
+
+    // 设置别名
+    config.resolve.alias.set('@_com', resolve('src/components'))
   }
 }

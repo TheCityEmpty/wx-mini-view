@@ -1,48 +1,34 @@
 <template>
-	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view>
-			<text class="title">{{title}}</text>
-		</view>
+	<view class="wrap-box">
+		<wm-custom-nav>组件详情介绍</wm-custom-nav>
 	</view>
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				title: 'Hello'
-			}
-		},
+import WxCustomNav from '@_com/wm-custom-nav/wm-custom-nav.vue'
+export default {
+	components: {
+		WxCustomNav
+	},
+	data() {
+		return {
+			title: 'Hello'
+		}
+	},
 
-		onLoad () {
-			this.aa()
-		},
-	
-		methods: {
-			aa () {
-				console.log('aaa')
-				console.log('cccc')
-				console.log('cccc')
-			}
+	onLoad () {
+		this.aa()
+	},
+
+	methods: {
+		aa () {
+			console.log('aaa')
+			console.log('cccc')
+			console.log('cccc')
 		}
 	}
+}
 </script>
 
 <style lang="less">
-	.content {
-		text-align: center;
-		height: 400upx;
-		.logo {
-				height: 200upx;
-				width: 200upx;
-				margin-top: 400upx;
-			}
-	}
-
-
-	.title {
-		font-size: 36upx;
-		color: #8f8f94;
-	}
 </style>
