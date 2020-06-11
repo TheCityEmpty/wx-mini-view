@@ -1,6 +1,7 @@
 <template>
 	<view class="wrap-box">
-		<wm-custom-nav>组件详情介绍</wm-custom-nav>
+		<wm-custom-nav bg="rgba(237, 237, 237)" type="light" navType="search"></wm-custom-nav>
+		<view style="background: #fff;height: 100px;width: 100vw;"></view>
 	</view>
 </template>
 
@@ -12,7 +13,7 @@ export default {
 	},
 	data() {
 		return {
-			title: 'Hello'
+			gobackLayout: []
 		}
 	},
 
