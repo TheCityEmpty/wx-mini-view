@@ -1,7 +1,6 @@
 <template>
 	<view class="wrap-box">
-		<wm-custom-nav bg="rgba(237, 237, 237)" type="light" navType="search"></wm-custom-nav>
-		<view style="background: #fff;height: 100px;width: 100vw;"></view>
+		<wm-custom-nav :gobackLayout="gobackLayout">wx-mini-view组件库</wm-custom-nav>
 	</view>
 </template>
 
@@ -13,7 +12,16 @@ export default {
 	},
 	data() {
 		return {
-			gobackLayout: []
+			gobackLayout: [
+				{
+					mode: 'goHome',
+					isShow: false
+				},
+				{
+					mode: 'goBack',
+					isShow: false
+				}
+			]
 		}
 	},
 

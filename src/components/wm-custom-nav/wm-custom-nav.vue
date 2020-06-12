@@ -17,10 +17,6 @@
             <image :src="type === 'light' ? item.lightImgUrl: item.imgUrl"></image>
           </view>
         </view>
-        <!-- 搜索模式 -->
-        <view :class="wmSearchClass" :style="[wmTitleBoxStyle]" v-if="!$slots.default && navType === 'search'">
-          <input :value="searchVal" class="wm-search-inner"></input>
-        </view>
       </view>
     </view>
   </view>
@@ -52,7 +48,6 @@ export default {
     },
     /**
      * @example default 文字模式
-     * @example search 搜索模式
      * @example custom 自定义模式
      */
     navType: {
@@ -135,12 +130,6 @@ export default {
         `${this.navType === 'default' ? 'wx-title-center' : ''}`,
         `${this.type === 'light' ? 'wx-title-light' : ''}`
       ]
-    },
-    wmSearchClass (){
-      return [
-        'wm-search',
-         `${this.type === 'light' ? 'wx-search-light' : ''}`
-      ]
     }
   },
 
@@ -210,22 +199,6 @@ export default {
       width: 44rpx;
       height: 44rpx;
     }
-  }
-  .wm-search {
-    padding: 12rpx;
-    width: 60vw;
-    box-sizing: border-box;
-  }
-  .wx-search-light.wm-search {
-    .wm-search-inner {
-      background: #fff;
-      border-color: transparent;
-    }
-  }
-  .wm-search-inner {
-    border: 1px solid #dadada;
-    border-radius: 10rpx;
-    height: 100%;
   }
 }
 </style>
