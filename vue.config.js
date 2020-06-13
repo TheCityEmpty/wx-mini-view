@@ -6,6 +6,12 @@ const resolve = dir => {
   return path.join(__dirname, dir)
 }
 
+const envDistUrl = [
+  'dist',
+  process.env.NODE_ENV === 'production' ? '/build' : '/dev',
+  '/' +process.env.UNI_PLATFORM
+].join('')
+console.log(envDistUrl)
 module.exports = {
   configureWebpack: {
     plugins: [
@@ -13,7 +19,11 @@ module.exports = {
         // （微信小程序端） 处理uni-app 打包时 未将 sitemap.json 文件一起打进去的情况
         {
           from: path.join(__dirname, 'sitemap.json'),
-          to: path.join(__dirname, 'dist/dev/mp-weixin')
+          to: path.join(__dirname, envDistUrl)
+        },
+        {
+          from: path.join(__dirname, 'src/components/images'),
+          to: path.join(__dirname, envDistUrl + '/images')
         }
       ])
     ]
