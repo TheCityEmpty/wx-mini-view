@@ -2,7 +2,7 @@ export default class Scheduler {
   concurrency = 1
   running = 0
   queue = []
-  add(task) {
+  add (task) {
     return new Promise(resolve => {
       this.queue.push({
         taskGenerator: task,
@@ -12,7 +12,7 @@ export default class Scheduler {
     })
   }
   // 除第一次主动 执行队列外， 之后的队列都得主动调用此方法
-  schedule() {
+  schedule () {
     while (this.queue.length > 0 && this.running < this.concurrency) {
       const curTask = this.queue.shift()
       this.running += 1

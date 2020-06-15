@@ -4,7 +4,7 @@
 
     <view class="wm-dialog-box">
       <view class="wm-dialog-content">
-        <view class="wm-dialog-title" v-show="title">{{ title }}</view>
+        <view class="wm-dialog-title" :class="{ 'wm-dialog-tile-body': title && content }" v-show="title">{{ title }}</view>
         <view class="wm-dialog-body" v-show="content">{{ content }}</view>
         <view class="wm-dialog-footer">
           <button class="cancel wm-btn" @click="clickFn('cancel')">取消</button>
@@ -73,7 +73,7 @@ export default {
     overflow: hidden;
 
     .wm-dialog-title {
-      padding: 32rpx 32rpx 20rpx;
+      padding: 32rpx;
       font-size: 32rpx;
       font-weight: 600;
       color: #333;
@@ -81,12 +81,16 @@ export default {
     }
 
     .wm-dialog-body {
-      padding: 0 32rpx 32rpx;
+      padding: 32rpx;
       text-align: center;
       font-size: 32rpx;
       color: #646566;
       border-bottom: 2rpx solid #f8f9fa;
 
+    }
+
+    .wm-dialog-tile-body {
+      padding-bottom: 0!important;
     }
 
     .wm-dialog-footer {

@@ -1,7 +1,6 @@
 import Vuex from 'vuex'
 import Scheduler from '../utils/schedule.js'
 
-
 const scheduler = new Scheduler()
 const defaultState = {
   show: false,
@@ -26,7 +25,7 @@ export default function initDialog (v) {
         state = Object.assign(state, { ...defaultState })
       }
     }
-    
+
   })
 
   v.prototype.$openDialog = (options) => {
@@ -40,10 +39,9 @@ export default function initDialog (v) {
             // 关闭dialog 之后执行下一个 dialog
             scheduler.schedule()
           }
-          resolve({type, closeFn})
+          resolve({ type, closeFn })
         })
       })
     })
-    
   }
 }

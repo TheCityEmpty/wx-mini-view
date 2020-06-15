@@ -10,58 +10,42 @@
 import WxCustomNav from '@_com/wm-custom-nav/wm-custom-nav.vue'
 
 export default {
-	components: {
-		WxCustomNav
-	},
-	data() {
-		return {
-			gobackLayout: [
-				{
-					mode: 'goHome',
-					isShow: false
-				},
-				{
-					mode: 'goBack',
-					isShow: false
-				}
-			]
-		}
-	},
+  components: {
+    WxCustomNav
+  },
+  data () {
+    return {
+      gobackLayout: [
+        {
+          mode: 'goHome',
+          isShow: false
+        },
+        {
+          mode: 'goBack',
+          isShow: false
+        }
+      ]
+    }
+  },
 
-	onLoad () {
-		this.$openDialog({
-			title: '标题1',
-			content: '第一次打开dialog'
-		}).then(res => {
-				console.log(res)
-				res.closeFn()
-			})
+  onLoad () {
+    this.$openDialog({
+      title: 'asd',
+      content: '第一次打开dialog'
+    }).then(res => {
+      console.log(res)
+      res.closeFn()
+    })
+  },
 
-
-			this.$openDialog({
-			content: '第er次打开dialog'
-		}).then(res => {
-				console.log(res)
-				res.closeFn()
-			})
-
-
-			this.$openDialog({
-			title: '标题3',
-		}).then(res => {
-				console.log(res)
-				res.closeFn()
-			})
-	},
-
-	methods: {
-		open () {
-			this.$openDialog().then(res => {
-				console.log(res)
-				res.closeFn()
-			})
-		}
-	}
+  methods: {
+    open () {
+      this.$openDialog().then(res => {
+        console.log(res)
+        res.closeFn()
+      })
+    }
+  }
 }
 </script>
 

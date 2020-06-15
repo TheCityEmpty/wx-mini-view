@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App'
-import initWxMiniView from '@_com/init.js'
+import '@_com/init.js'
 import initDialog from '@_com/wm-dialog/init.js'
 import WxDialog from '@_com/wm-dialog/wm-dialog.vue'
 

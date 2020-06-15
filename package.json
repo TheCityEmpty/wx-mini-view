@@ -75,7 +75,9 @@
     "mini-types": "*",
     "miniprogram-api-typings": "*",
     "postcss-comment": "^2.0.0",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "@vue/eslint-config-standard": "^3.0.0-beta.10",
+    "@vue/cli-plugin-eslint": "^3.0.0split-beta.10"
   },
   "browserslist": [
     "Android >= 4",

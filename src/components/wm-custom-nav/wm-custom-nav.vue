@@ -24,7 +24,7 @@
 
 <script>
 const systemInfo = uni.getSystemInfoSync()
-const brand = systemInfo.brand.toLowerCase()
+// const brand = systemInfo.brand.toLowerCase()
 
 let rect = null
 try {
@@ -108,7 +108,7 @@ export default {
     }
   },
   computed: {
-    wmPlaceholderStyle() {
+    wmPlaceholderStyle () {
       return {
         height: this.realNavHeight,
         background: this.bg
@@ -119,12 +119,12 @@ export default {
         height: this.statusBarHeight
       }
     },
-    wmTitleBoxStyle (){
+    wmTitleBoxStyle () {
       return {
         height: this.navBarHeight
       }
     },
-    wmTitleClass (){
+    wmTitleClass () {
       return [
         'wm-title-box',
         `${this.navType === 'default' ? 'wx-title-center' : ''}`,
@@ -133,7 +133,7 @@ export default {
     }
   },
 
-  created (){
+  created () {
     this.gobackLayoutArr = this.gobackLayoutArr.map(item => {
       const target = this.gobackLayout.find(i => i.mode === item.mode)
       return { ...item, ...(target || {}) }
