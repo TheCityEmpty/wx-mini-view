@@ -15,7 +15,7 @@ module.exports = {
     'no-tabs': 'off',
     'no-mixed-spaces-and-tabs': ['error', 'smart-tabs'],
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-debugger': 'error',
     'vue/no-parsing-error': [1, { 'x-invalid-end-tag': false }]
   },
   // 全局的设置， 这里代表 这些字母的 不进行校验， 案例: 在uni-app中写小程序，比如微信小程序， 自带全局变量 wx ,eslint 

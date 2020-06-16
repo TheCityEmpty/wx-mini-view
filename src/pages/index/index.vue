@@ -2,16 +2,18 @@
 	<view class="wrap-box">
 		<wm-custom-nav :gobackLayout="gobackLayout">wx-mini-view组件库</wm-custom-nav>
 		<button @click="open">打开dialog</button>
+    <wm-canlendar></wm-canlendar>
 		<wm-dialog></wm-dialog>
 	</view>
 </template>
 
 <script>
 import WxCustomNav from '@_com/wm-custom-nav/wm-custom-nav.vue'
-
+import WxCanlendar from '@_com/wm-canlendar/wm-canlendar.vue'
 export default {
   components: {
-    WxCustomNav
+    WxCustomNav,
+    WxCanlendar
   },
   data () {
     return {
@@ -29,13 +31,6 @@ export default {
   },
 
   onLoad () {
-    this.$openDialog({
-      title: 'asd',
-      content: '第一次打开dialog'
-    }).then(res => {
-      console.log(res)
-      res.closeFn()
-    })
   },
 
   methods: {
