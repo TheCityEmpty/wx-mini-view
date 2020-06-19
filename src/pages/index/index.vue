@@ -2,7 +2,7 @@
 	<view class="wrap-box">
 		<wm-custom-nav :gobackLayout="gobackLayout">wx-mini-view组件库</wm-custom-nav>
 		<button @click="open">打开dialog</button>
-    <wm-canlendar></wm-canlendar>
+    <wm-canlendar @change="canlendarChange"></wm-canlendar>
 		<wm-dialog></wm-dialog>
 	</view>
 </template>
@@ -34,6 +34,9 @@ export default {
   },
 
   methods: {
+    canlendarChange (val) {
+      console.log(val)
+    },
     open () {
       this.$openDialog().then(res => {
         console.log(res)

@@ -1,3 +1,8 @@
+// 补0
+const supply0 = (n) => {
+  return n < 10 ? `0${n}` : n
+}
+
 // 获取当前月第一个是礼拜几
 const getFirstDay = (year, month) => {
   return new Date(year, month - 1, 1).getDay()
@@ -41,7 +46,7 @@ export const getCanlendar = (year, month, isGetLunar = false, isCompletion = tru
         currentM = 12
       }
       lines.push({
-        dateStr: `${currentY}/${currentM}/${prevLastDate - (firstDay - i)}`,
+        dateStr: `${currentY}/${supply0(currentM)}/${supply0(prevLastDate - (firstDay - i))}`,
         timeStamp: new Date(currentY, currentM, prevLastDate - (firstDay - i)).getTime(),
         val: prevLastDate - (firstDay - i),
         enabled: false,
@@ -50,7 +55,7 @@ export const getCanlendar = (year, month, isGetLunar = false, isCompletion = tru
       })
     } else {
       lines.push({
-        dateStr: `${year}/${month}/${i - firstDay}`,
+        dateStr: `${year}/${supply0(month)}/${supply0(i - firstDay)}`,
         timeStamp: new Date(year, month, i - firstDay).getTime(),
         val: i - firstDay,
         enabled: true,
@@ -66,7 +71,7 @@ export const getCanlendar = (year, month, isGetLunar = false, isCompletion = tru
   let count = 0
   for (let i = (7 - firstDay + 1); i <= lastDate; i++) {
     const _Date = {
-      dateStr: `${year}/${month}/${i}`,
+      dateStr: `${year}/${supply0(month)}/${supply0(i)}`,
       timeStamp: new Date(year, month, i).getTime(),
       val: i,
       enabled: true,
@@ -96,7 +101,7 @@ export const getCanlendar = (year, month, isGetLunar = false, isCompletion = tru
     for (let i = 0; i <= 6; i++) {
       if (i <= lastDay) {
         lines.push({
-          dateStr: `${year}/${month}/${lastDate - (lastDay - i)}`,
+          dateStr: `${year}/${supply0(month)}/${supply0(lastDate - (lastDay - i))}`,
           timeStamp: new Date(year, month, lastDate - (lastDay - i)).getTime(),
           val: lastDate - (lastDay - i),
           enabled: true,
@@ -112,7 +117,7 @@ export const getCanlendar = (year, month, isGetLunar = false, isCompletion = tru
           currentM = 1
         }
         lines.push({
-          dateStr: `${currentY}/${currentM}/${i - lastDay}`,
+          dateStr: `${currentY}/${supply0(currentM)}/${supply0(i - lastDay)}`,
           timeStamp: new Date(currentY, currentM, i - lastDay).getTime(),
           val: i - lastDay,
           enabled: false,
@@ -138,7 +143,7 @@ export const getCanlendar = (year, month, isGetLunar = false, isCompletion = tru
         currentM = 1
       }
       lines.push({
-        dateStr: `${currentY}/${currentM}/${i}`,
+        dateStr: `${currentY}/${supply0(currentM)}/${supply0(i)}`,
         timeStamp: new Date(currentY, currentM, i).getTime(),
         val: i,
         enabled: false,
